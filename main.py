@@ -1,15 +1,19 @@
 """Модуль входа в программу."""
 
-from database import Database
-from settings import settings
+from database import Database, DatabaseSettings
 
 
 def main() -> None:
     """Главная функция."""
-    db = Database(settings=settings)
-    with db() as conn:
-        conn.cursor()
+    pas = "postgres"
+    settings = DatabaseSettings(
+        host="localhost",
+        port=54321,
+        db="postgres",
+        user="postgres",
+        password=pas,
+    )
 
 
-if __name__ == "__main__":
+if name == "main":
     main()
